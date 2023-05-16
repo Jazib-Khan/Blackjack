@@ -6,12 +6,15 @@ let blackjackGame = {
 const YOU = blackjackGame['you'];
 const DEALER = blackjackGame['dealer'];
 
+const hitSound = new Audio('static/sounds/swish.m4a');
+
 document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackHit);
 
 function blackjackHit() {
     let cardImage = document.createElement('img');
     cardImage.src = 'static/images/Q.png';
     document.querySelector(YOU['div']).appendChild(cardImage);
+    hitSound.play();
 }
 
 
