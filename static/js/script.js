@@ -12,6 +12,8 @@ const hitSound = new Audio('static/sounds/swish.m4a');
 
 document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackHit);
 
+document.querySelector('#blackjack-stand-button').addEventListener('click', dealerLogic);
+
 document.querySelector('#blackjack-deal-button').addEventListener('click', blackjackDeal);
 
 function blackjackHit() {
@@ -82,3 +84,9 @@ function showScore(activePlayer) {
     }
 }
 
+function dealerLogic() {
+    let card= randomCard();
+    showCard(card, DEALER);
+    updateScore(card, DEALER);
+    showScore(DEALER);
+}
